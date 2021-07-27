@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ButtonComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     NgbModule
   ],

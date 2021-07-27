@@ -5,7 +5,7 @@ export interface MyButtonConfig{
 }
 
 export const myConfig : MyButtonConfig={
-  customCssClass: "btn-primary",
-  icon: "blueButtonIcon",
-  text: "blueButtonText"
+  customCssClass: "btn btn-primary rounded-pill",
+  icon: "bi bi-vinyl",
+  text: "Blue Button"
 }
