@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th class="clickable" *ngFor="let key of tableConfig.headers">
+        {{key.label}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of datimock">
+      <td *ngFor="let header of tableConfig.headers">
+        {{item[header.key]}}
+      </td>
+    </tr>
+  </tbody>
+</table>

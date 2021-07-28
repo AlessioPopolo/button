@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {myConfig} from "./model/MyButtonConfig";
+import {myButtonConfig} from "./model/MyButtonConfig";
+import {myTableConfig} from "./model/MyTableConfig";
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import {myConfig} from "./model/MyButtonConfig";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'button';
-  buttonConfig = myConfig
+  title = 'button and table';
+  buttonConfig = myButtonConfig
+  tableConfig = myTableConfig
 }
