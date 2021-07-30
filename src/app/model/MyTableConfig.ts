@@ -10,7 +10,7 @@ export interface MyHeaders{
 
 export interface MyOrder{
   defaultColumn: string;
-  orderType: string;
+  orderType: boolean;
 }
 
 export const theHeaders: MyHeaders[]= [
@@ -21,7 +21,7 @@ export const theHeaders: MyHeaders[]= [
 
 export const theOrder: MyOrder = {
   defaultColumn: 'id',
-  orderType: 'ascending'
+  orderType: true
 };
 
 export const myTableConfig : MyTableConfig={

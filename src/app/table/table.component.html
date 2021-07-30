@@ -1,13 +1,13 @@
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
-      <th *ngFor="let key of tableConfig.headers">
+      <th class="clickable" *ngFor="let key of tableConfig.headers" (click)="orderBy(key.label)">
         {{key.label}}
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of data">
+    <tr *ngFor="let item of filteredList">
       <td *ngFor="let header of tableConfig.headers">
         {{item[header.key]}}
       </td>
