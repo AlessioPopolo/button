@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MyTableConfig} from "../model/MyTableConfig";
 import * as _ from "lodash";
+import { faSortAlphaDown, faSortAlphaUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-table',
@@ -15,11 +16,15 @@ export class TableComponent implements OnInit{
   lastSortedColumn!: string;
   orderType!: boolean;
 
+  faSortUp = faSortAlphaUp;
+  faSortDown = faSortAlphaDown;
+
   constructor() { }
 
   ngOnInit(): void {
     this.filteredList = _.orderBy(this.data,[this.tableConfig.order.defaultColumn], [this.tableConfig.order.orderType]);
     this.lastSortedColumn = this.tableConfig.order.defaultColumn;
+    this.orderType = true;
   }
 
   orderBy(label: string): void {

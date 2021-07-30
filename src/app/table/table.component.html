@@ -3,6 +3,12 @@
     <tr>
       <th class="clickable" *ngFor="let key of tableConfig.headers" (click)="orderBy(key.label)">
         {{key.label}}
+        <ng-container *ngIf="orderType; else elseBlock">
+          <fa-icon [icon]="faSortDown" class="align-items-center"></fa-icon>
+        </ng-container>
+        <ng-template #elseBlock>
+          <fa-icon [icon]="faSortUp" class="align-items-center"></fa-icon>
+        </ng-template>
       </th>
     </tr>
   </thead>
