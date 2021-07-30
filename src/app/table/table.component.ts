@@ -1,6 +1,5 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {MyTableConfig} from "../model/MyTableConfig";
-import {DATIMOCK, MockDataTable} from "../model/MockDataTable";
 
 @Component({
   selector: 'app-table',
@@ -11,8 +10,6 @@ export class TableComponent implements OnInit{
 
   @Input() tableConfig!:MyTableConfig;
   @Input() data!:any;
-
-  datimock = DATIMOCK;
 
   constructor() { }
 

@@ -4,7 +4,7 @@ export interface MockDataTable {
   cognome: string
 }
 
-export const DATIMOCK: any[] = [
+export const DATIMOCK: Array<MockDataTable> = [
   { id: 11, nome: 'Dr Nice', cognome: 'Bello' },
   { id: 12, nome: 'Narco', cognome: 'cognome' },
   { id: 13, nome: 'Bombasto', cognome: 'cognome' },

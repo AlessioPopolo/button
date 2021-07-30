@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { TableComponent } from './table/table.component';
   imports: [
     NgbModule,
     BrowserModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
