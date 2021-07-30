@@ -15,6 +15,7 @@ export class TableComponent implements OnInit{
   filteredList!: any[];
   lastSortedColumn!: string;
   orderType!: boolean;
+  searchedKeyword!: string;
 
   faSortUp = faSortAlphaUp;
   faSortDown = faSortAlphaDown;

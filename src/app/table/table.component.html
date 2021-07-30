@@ -1,3 +1,6 @@
+<div class="form-group">
+  <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
+</div>
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
@@ -13,7 +16,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of filteredList">
+    <tr *ngFor="let item of filteredList | filter:searchedKeyword">
       <td *ngFor="let header of tableConfig.headers">
         {{item[header.key]}}
       </td>
