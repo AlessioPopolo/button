@@ -1,6 +1,8 @@
 export interface MyTableConfig{
   headers : MyHeaders[]
   order: MyOrder
+  search : MySearch
+  pagination : MyPagination
 }
 
 export interface MyHeaders{
@@ -11,6 +13,15 @@ export interface MyHeaders{
 export interface MyOrder{
   defaultColumn: string;
   orderType: boolean;
+}
+
+export interface MySearch {
+  columns : string [];
+}
+
+export interface MyPagination {
+  itemPerPage : number ;
+  itemPerPageOptions : number [];
 }
 
 export const theHeaders: MyHeaders[]= [
@@ -24,7 +35,18 @@ export const theOrder: MyOrder = {
   orderType: true
 };
 
+export const theSearch: MySearch = {
+  columns: []
+}
+
+export const thePagination: MyPagination = {
+  itemPerPage: 5,
+  itemPerPageOptions: [2, 5, 10, 20]
+}
+
 export const myTableConfig : MyTableConfig={
   headers: theHeaders,
-  order: theOrder
+  order: theOrder,
+  search: theSearch,
+  pagination: thePagination
 }
