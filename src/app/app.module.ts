@@ -10,12 +10,14 @@ import { MatTableModule } from "@angular/material/table";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Ng2SearchPipeModule} from "ng2-search-filter";
 import { FormsModule} from "@angular/forms";
+import { PaginationPipe} from "./pagination.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    TableComponent
+    TableComponent,
+    PaginationPipe
   ],
   imports: [
     NgbModule,

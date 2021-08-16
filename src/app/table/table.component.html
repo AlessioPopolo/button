@@ -1,6 +1,16 @@
 <div class="form-group">
   <input type="text" class="form-control"  placeholder="Enter Keyword for filter result" [(ngModel)]="searchedKeyword">
 </div>
+
+<nav aria-label="Page navigation example" id="paginator">
+  <ul class="pagination">
+    <a class="page-link clickable" *ngFor="let el of pages" [ngClass]="{'active' : active == el}" (click)="active = el">
+      <li >{{el+1}}</li>
+    </a>
+  </ul>
+</nav>
+
+
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
@@ -16,7 +26,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of filteredList | filter:searchedKeyword">
+    <tr *ngFor="let item of filteredList | filter:searchedKeyword | pagination:(currentPage)">
       <td *ngFor="let header of tableConfig.headers">
         {{item[header.key]}}
       </td>
@@ -24,3 +34,6 @@
   </tbody>
 </table>
 
+<select class="form-select" [ngModel]="itemPerPage" (ngModelChange)="viewItems($event)">
+  <option *ngFor="let item of tableConfig.pagination.itemPerPageOptions" value="{{item}}">{{item}}</option>
+</select>
