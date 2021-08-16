@@ -4,9 +4,27 @@
 
 <nav aria-label="Page navigation example" id="paginator">
   <ul class="pagination">
+    <a class="page-link clickable" *ngIf="active>0; else elsePrev" (click)="active = active - 1">
+      <li >prev</li>
+    </a>
+    <ng-template #elsePrev>
+      <a class="page-link clickable">
+        <li >prev</li>
+      </a>
+    </ng-template>
+
     <a class="page-link clickable" *ngFor="let el of pages" [ngClass]="{'active' : active == el}" (click)="active = el">
       <li >{{el+1}}</li>
     </a>
+
+    <a class="page-link clickable" *ngIf="active<(pages.length-1); else elseNext" (click)="active = active + 1">
+      <li >next</li>
+    </a>
+    <ng-template #elseNext>
+      <a class="page-link clickable">
+        <li >next</li>
+      </a>
+    </ng-template>
   </ul>
 </nav>
 
