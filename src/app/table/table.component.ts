@@ -32,11 +32,16 @@ export class TableComponent implements OnInit{
     if (this.itemPerPage === undefined){
       this.itemPerPage = this.tableConfig.pagination.itemPerPage;
     }
-    if (this.filteredList.length>=this.itemPerPage){
-      this.pages = Array(this.filteredList.length/this.itemPerPage).fill(0).map((x, i) => i); //set array length
+    if (this.filteredList.length<=this.itemPerPage){
+      this.pages = [0]
     }
     else {
-      this.pages = [0];
+      if((this.filteredList.length%this.itemPerPage)>0){
+        this.pages = Array((this.filteredList.length + (this.itemPerPage - (this.filteredList.length%this.itemPerPage))) /this.itemPerPage).fill(0).map((x, i) => i);
+      }
+      else {
+        this.pages = Array(this.filteredList.length/this.itemPerPage).fill(0).map((x, i) => i);
+      }
     }
   }
 
