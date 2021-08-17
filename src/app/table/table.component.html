@@ -13,8 +13,16 @@
       </a>
     </ng-template>
 
-    <a class="page-link clickable" *ngFor="let el of pages" [ngClass]="{'active' : active == el}" (click)="active = el">
+    <a class="page-link clickable" *ngIf="active!=1" [ngClass]="{'active' : active == 0}" (click)="active = 0">
+      <li >1</li>
+    </a>
+
+    <a class="page-link clickable" *ngFor="let el of pages | slice: active-1:active+2" [ngClass]="{'active' : active == el}" (click)="active = el">
       <li >{{el+1}}</li>
+    </a>
+
+    <a class="page-link clickable" *ngIf="active<pages.length-2" [ngClass]="{'active' : active == (pages.length-1)}" (click)="active = (pages.length-1)">
+      <li >{{pages.length}}</li>
     </a>
 
     <a class="page-link clickable" *ngIf="active<(pages.length-1); else elseNext" (click)="active = active + 1">
