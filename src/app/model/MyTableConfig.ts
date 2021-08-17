@@ -3,6 +3,7 @@ export interface MyTableConfig{
   order: MyOrder
   search : MySearch
   pagination : MyPagination
+  action : MyTableActionEnum
 }
 
 export interface MyHeaders{
@@ -22,6 +23,10 @@ export interface MySearch {
 export interface MyPagination {
   itemPerPage : number ;
   itemPerPageOptions : number [];
+}
+
+export interface MyTableActionEnum {
+  actions: string[];
 }
 
 export const theHeaders: MyHeaders[]= [
@@ -44,9 +49,14 @@ export const thePagination: MyPagination = {
   itemPerPageOptions: [2, 5, 10, 20]
 }
 
+export const theActionEnum: MyTableActionEnum = {
+  actions: []
+}
+
 export const myTableConfig : MyTableConfig={
   headers: theHeaders,
   order: theOrder,
   search: theSearch,
-  pagination: thePagination
+  pagination: thePagination,
+  action: theActionEnum
 }
