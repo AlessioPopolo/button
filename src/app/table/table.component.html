@@ -13,7 +13,7 @@
       </a>
     </ng-template>
 
-    <a class="page-link clickable" *ngIf="active!=1" [ngClass]="{'active' : active == 0}" (click)="active = 0">
+    <a class="page-link clickable" *ngIf="active!=1 && pages.length>1" [ngClass]="{'active' : active == 0}" (click)="active = 0">
       <li >1</li>
     </a>
 
