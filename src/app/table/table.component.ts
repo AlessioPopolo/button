@@ -72,4 +72,9 @@ export class TableComponent implements OnInit{
     this.ngOnInit();
   }
 
+  doAction(action: string, object: object){
+    console.log("Action: " + action);
+    console.log("Object: " + object);
+  }
+
 }

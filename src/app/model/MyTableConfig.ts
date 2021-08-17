@@ -3,7 +3,7 @@ export interface MyTableConfig{
   order: MyOrder
   search : MySearch
   pagination : MyPagination
-  action : MyTableActionEnum
+  actions : MyTableActionEnum[]
 }
 
 export interface MyHeaders{
@@ -26,7 +26,10 @@ export interface MyPagination {
 }
 
 export interface MyTableActionEnum {
-  actions: string[];
+  customCssClass : string ;
+  icon: string;
+  label: string;
+  action: string;
 }
 
 export const theHeaders: MyHeaders[]= [
@@ -49,14 +52,16 @@ export const thePagination: MyPagination = {
   itemPerPageOptions: [2, 5, 10, 20]
 }
 
-export const theActionEnum: MyTableActionEnum = {
-  actions: []
-}
+export const theActionEnum: MyTableActionEnum[] = [
+  {customCssClass: "btn btn-success", icon: "bi bi-plus-square", label: "ADD", action: "add"},
+  {customCssClass: "btn btn-primary", icon: "bi bi-pencil-square", label: "EDIT", action: "edit"},
+  {customCssClass: "btn btn-danger", icon: "bi bi-x-lg", label: "DELETE", action: "delete"}
+]
 
 export const myTableConfig : MyTableConfig={
   headers: theHeaders,
   order: theOrder,
   search: theSearch,
   pagination: thePagination,
-  action: theActionEnum
+  actions: theActionEnum
 }

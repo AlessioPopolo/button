@@ -49,12 +49,19 @@
           <fa-icon [icon]="faSortUp" class="align-items-center"></fa-icon>
         </ng-template>
       </th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of filteredList | filter:searchedKeyword | pagination:(currentPage)">
       <td *ngFor="let header of tableConfig.headers">
         {{item[header.key]}}
+      </td>
+      <td>
+        <button *ngFor="let actions of tableConfig.actions" class="{{actions.customCssClass}} mr-1" (click)="doAction(actions.action, item)">
+          <i class="{{actions.icon}}"></i>
+          {{actions.label}}
+        </button>
       </td>
     </tr>
   </tbody>
